@@ -12,6 +12,8 @@ import SideBar from './SideBar.js'
 import SingleUser from './SingleUser.js'
 import NavBar from './NavBar.js'
 
+import BookMarkDirect from './BookMarkDirect.js';
+
 
 class Main extends Component{
     constructor(props){
@@ -21,7 +23,8 @@ class Main extends Component{
             
             screen: 'loading',
             remove:'',
-            employees:[]
+            employees:[],
+            bookmarks:[]
         }
 
         this.removeEmployee = this.removeEmployee.bind(this)
@@ -30,6 +33,7 @@ class Main extends Component{
         this.componentDidMount = this.componentDidMount.bind(this)
         this.componentWillUnmount = this.componentWillUnmount.bind(this)
         this.navigateBack = this.navigateBack.bind(this)
+        this.AddBookMark = this.AddBookMark.bind(this)
 
 
     }
@@ -58,6 +62,15 @@ class Main extends Component{
       this.setState((state) => ({
         employees: state.employees.filter(employee => employee !== employeeRemoved)
           }))
+        
+     }
+
+     AddBookMark(bookMarkAdded){
+        this.setState(state => ({
+          bookmarks: state.bookmarks.concat(bookMarkAdded)
+             
+        }))
+        console.log(this.state.bookmarks)
      }
 
      AddEmployee(postSubmitted){
@@ -76,7 +89,7 @@ class Main extends Component{
 
     navigateBack(){
       this.setState({remove:'default'});
-      console.log(this.state.remove)
+   
     }
 
 
@@ -114,7 +127,14 @@ class Main extends Component{
         )}/>
 
       <Route exact path='/user/:id' render={(params) => (
-        <SingleUser   {...params} employees={this.state.employees}/>
+        <div>
+        <SingleUser   {...params} employees={this.state.employees} onRemoveEmployee={this.removeEmployee} onAddBookMark={this.AddBookMark}/>
+
+        </div>
+      )} />
+
+      <Route exact path='/bookmark' render={() => (
+        <BookMarkDirect bookmarks={this.state.bookmarks}/>
       )} />
       
         </div>

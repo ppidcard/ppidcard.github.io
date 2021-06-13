@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import '../Styles/SingleUser.css'
+import {Link} from 'react-router-dom'
 
 
 function SingleUser(props){
-    console.log(props)
+ 
+
+
+
         const id = props.match.params.id;
         const employees = props.employees;
-        console.log(employees[0].id.value)
+ 
         const single = employees.find((employee) => employee.id.value == id)
 
         return(
@@ -23,12 +27,18 @@ function SingleUser(props){
 
 
         <div class="buttons">
-		<button class="primary">
+		<Link to='/bookmark'><button class="primary" onClick={() => {
+            props.onAddBookMark(single);
+         
+        }}>
 			Bookmark
-		</button>
-		<button class="primary ghost">
+		</button></Link>
+		<Link to='/'><button class="primary ghost" onClick={(() => {
+            props.onRemoveEmployee(single);
+            
+        })}>
 			Remove
-		</button>
+		</button></Link>
 	</div>
 
 </div>

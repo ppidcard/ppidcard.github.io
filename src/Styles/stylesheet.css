@@ -57,7 +57,16 @@ h1{
     
 }
 
+.bookmark .employee-photo{
+    margin-left: 300px;
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
 
+.bookmark .employee-text{
+    margin-right: 450px;
+}
 .button-container{
     display: flex;
     justify-content: center;

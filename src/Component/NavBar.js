@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Styles/NavBar.css'
+import {Link} from 'react-router-dom'
 
 
 function NavBar (props) {
@@ -11,7 +12,7 @@ function NavBar (props) {
     <a className='title'><span>Employee Directory</span></a>
       <a className='navlinks'href="#">Home</a>
 
-      <a className='navlinks'href="#">Saved</a>
+      <Link to='/bookmark'><a className='navlinks'href="#">Saved</a></Link>
       <a className='navlinks'href="#">About</a>
       <div class="dot"></div>
     </nav>

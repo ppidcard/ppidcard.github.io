@@ -1,0 +1,34 @@
+.select-gender{
+    width: 200px;
+    height: 44px;
+    border: none;
+    background-color:  #f2f2f2;
+    font-size: 15px;
+
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.gender-label{
+
+    padding-right: 149px;
+    font-weight: 500;
+    background-color:transparent ;
+    padding-top: 13px;
+    padding-left: 0px;
+    padding-bottom: 14px;
+
+
+    font-size: 15px;
+}
+
+
+
+#gender{
+    padding-left: 0px;
+}
+
+form input.profile-picture{
+    width: 410px;
+    
+}

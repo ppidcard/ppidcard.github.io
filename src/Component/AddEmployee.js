@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Form, Col, FormGroup, Checkbox } from 'react-bootstrap'
+import '../Styles/AddEmployee.css'
 
 class AddEmployee extends Component{
     constructor(props){
@@ -50,14 +51,14 @@ class AddEmployee extends Component{
                     <Form.Control type='text' placeholder='Last Name'name='lastName'/>
                     </Col>
                     </Form.Row>
-                    <label for="gender">Gender</label>
-                    <select id='gender'name='gender' form='gender'>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-        </select>
+                    <label for="gender" id='gender' className='gender-label'>   Gender</label>
+                    <select className='select-gender' form='gender'>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    </select>
      
-                    <input type='text' placeholder='Gender'name='gender'/>
+                    
 
            
                     <input type='text' placeholder='Email Address'name='email'/>
@@ -65,7 +66,7 @@ class AddEmployee extends Component{
                                         <input type='text' placeholder='City'name='city'/>
                     <input type='text' placeholder='Country'name='country'/>
 
-                    <input type='text' placeholder='Profile Picture' name='link'/>
+                    <input type='text' className='profile-picture' placeholder='Profile Picture' name='link'/>
                     <button className='form-button'>Add</button>
                 </Form>
             </div>
