@@ -1,0 +1,151 @@
+html{
+    font-size: 10px; 
+    font-family: 'sans-serif';
+}
+
+p{
+    font-size:1.6rem;
+    line-height: 1.5;
+}
+h1{
+    text-align: center;
+    font-size: 6rem;
+    margin:2rem 0;
+}
+
+.loading-pic{
+    margin: 15% auto;
+    max-width: 1000px;
+    display: table;
+    width: 100px;
+}
+.photo-grid{
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    float:left;
+    margin-left: 18%;
+    flex-wrap: wrap;
+    margin-top: 8%;
+}
+
+.figure{
+    flex-basis:calc(33.333% - 4rem);
+    padding: 2rem;
+    flex-grow: 1;
+    margin:5rem 0.3rem 5rem 7rem;
+
+}
+
+.employee-text{
+
+    font-size: 14px;
+    text-align: right;
+    color:white;
+    opacity: 90%;
+
+}
+
+.gender-pronoun{
+    font-size: 12px;
+}
+.employee-photo{
+    width: 150px;
+    margin: -6rem 0 2rem  -2rem;
+    border-radius: 50%;
+    
+}
+
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.form-button{
+    flex-basis: 48%;
+    color: red;
+    font-size: 15px;
+    border: 2px solid #f2f2f2;
+    line-height: 2;
+    padding: 5px;
+
+}
+
+.addIcon{
+    margin-top:20px;
+    display: table;
+    border: none;
+    margin-left: 20px;
+}
+
+.form{
+    background:white;
+    max-width: 500px;
+    margin:0 auto;
+    padding:45px;
+    text-align: center;
+}
+
+.form input{
+    font-family: sans-serif;
+    background: #f2f2f2;
+
+    border:none;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size:14px;
+    margin: 0 0 15px;
+}
+
+.form-button{
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background: #065784;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-button :hover{
+    background: #7b8589
+}
+
+.form-button:hover{
+    background: darkcyan;
+    color: white;
+}
+
+.form-button{
+    font-family: sans-serif;
+    cursor: pointer;
+    color: darkgrey;
+}
+
+.remove-button{
+    width: 10px;
+    font-size: 10px;
+    margin-left: 20rem;
+    margin-bottom: -100px;
+
+    border: none;
+    cursor: pointer;
+    color: darkgrey;
+    background-color: #272727;
+   
+}
+
+.remove-button:hover{
+
+    color: tomato;
+}
+
+.form-row{
+
+    display: flex;
+    flex-direction: row;
+}
