@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/ppidcard.github.io/static/css/main.dba5c6ae.chunk.css",
+    "main.js": "/ppidcard.github.io/static/js/main.1ae461d7.chunk.js",
+    "main.js.map": "/ppidcard.github.io/static/js/main.1ae461d7.chunk.js.map",
+    "runtime-main.js": "/ppidcard.github.io/static/js/runtime-main.2c212edf.js",
+    "runtime-main.js.map": "/ppidcard.github.io/static/js/runtime-main.2c212edf.js.map",
+    "static/js/2.15c866b2.chunk.js": "/ppidcard.github.io/static/js/2.15c866b2.chunk.js",
+    "static/js/2.15c866b2.chunk.js.map": "/ppidcard.github.io/static/js/2.15c866b2.chunk.js.map",
+    "index.html": "/ppidcard.github.io/index.html",
+    "static/css/main.dba5c6ae.chunk.css.map": "/ppidcard.github.io/static/css/main.dba5c6ae.chunk.css.map",
+    "static/js/2.15c866b2.chunk.js.LICENSE.txt": "/ppidcard.github.io/static/js/2.15c866b2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c212edf.js",
+    "static/js/2.15c866b2.chunk.js",
+    "static/css/main.dba5c6ae.chunk.css",
+    "static/js/main.1ae461d7.chunk.js"
+  ]
+}
