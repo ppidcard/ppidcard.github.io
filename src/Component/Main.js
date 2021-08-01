@@ -18,8 +18,7 @@ class Main extends Component{
             remove:'',
             employees:[],
             bookmarks:[]
-        }
-      
+        } 
     }
 
     componentDidMount(){
@@ -44,14 +43,11 @@ class Main extends Component{
      }
      AddBookMark = (bookMarkAdded) => {
         this.setState(state => ({
-          bookmarks: state.bookmarks.concat(bookMarkAdded)
-             
+          bookmarks: state.bookmarks.concat(bookMarkAdded)             
         }))
-        console.log(this.state.bookmarks)
      }
 
      AddEmployee(postSubmitted){
-
       this.setState(state => ({
         employees: state.employees.concat(postSubmitted)
       })
@@ -71,7 +67,6 @@ class Main extends Component{
 
           <Route exact path='/' render = {() => (
           <div>
-
             {this.state.screen === 'employee' ? <div>
           <NavBar onNavigateBack={this.navigateBack} />
           <SideBar onNavigate={this.navigate} onNavigateBack={this.navigateBack} />
@@ -84,10 +79,7 @@ class Main extends Component{
           
          <AddEmployee onAddEmployee={(addedPost) => {
           this.AddEmployee(addedPost);
-       
           history.push('./');
-          // let history = useHistory();
-          // history.push('/');
         }}/>
  
         )}/>
@@ -95,14 +87,12 @@ class Main extends Component{
       <Route exact path='/user/:id' render={(params) => (
         <div>
         <SingleUser   {...params} employees={this.state.employees} onRemoveEmployee={this.removeEmployee} onAddBookMark={this.AddBookMark}/>
-
         </div>
       )} />
 
       <Route exact path='/bookmark' render={() => (
         <BookMarkDirect bookmarks={this.state.bookmarks}/>
       )} />
-      
         </div>
       )
     }

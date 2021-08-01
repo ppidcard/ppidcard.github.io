@@ -6,8 +6,8 @@ function EmployeeCard(props){
   
      return(
          <div>
-                         {props.removeState === 'remove' && <button className='remove-button' onClick={() =>{
-                props.onRemoveEmployee(perEm);
+            {props.removeState === 'remove' && <button className='remove-button' onClick={() =>{
+            props.onRemoveEmployee(perEm);
             }}>&#10006;</button>}
          <figure className='figure'>
             <Link to={`/user/${perEm.id.value}`}><img className='employee-photo' src={perEm.picture.large} alt={perEm.name.last} /></Link>
@@ -28,17 +28,3 @@ function EmployeeCard(props){
 export default EmployeeCard;
 
 
-// function Photo (props){
-//     const post = props.post
-//     return (
-//     <figure className='figure'>
-//         <img className='photo'src={post.imageLink} alt={post.description} />
-//         <figcaption><p>{post.description}</p></figcaption>
-//         <div className='button-container'>
-//             <button className='remove-button' onClick={() =>{
-//                 props.onRemovePhoto(post);
-//             }}>Remove</button>
-//         </div>
-//         </figure>
-//     )
-// }
