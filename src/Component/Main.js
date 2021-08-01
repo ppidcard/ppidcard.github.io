@@ -1,71 +1,48 @@
 import React, {Component} from 'react';
-
-
 import AddEmployee from './AddEmployee.js';
-import SearchBar from './SearchBar'
 import {Route} from 'react-router-dom';
-
 import axios from 'axios';
 import EmployeeDirect from './EmployeeDirect.js'
 import Loading from './Loading.js';
 import SideBar from './SideBar.js'
 import SingleUser from './SingleUser.js'
 import NavBar from './NavBar.js'
-
 import BookMarkDirect from './BookMarkDirect.js';
 
 
 class Main extends Component{
     constructor(props){
         super(props);
-        
         this.state = {
-            
             screen: 'loading',
             remove:'',
             employees:[],
             bookmarks:[]
         }
-
-        this.removeEmployee = this.removeEmployee.bind(this)
-        this.navigate = this.navigate.bind(this)
-        this.updateState = this.updateState.bind(this)
-        this.componentDidMount = this.componentDidMount.bind(this)
-        this.componentWillUnmount = this.componentWillUnmount.bind(this)
-        this.navigateBack = this.navigateBack.bind(this)
-        this.AddBookMark = this.AddBookMark.bind(this)
-
-
+      
     }
 
     componentDidMount(){
-      axios.get('https://randomuser.me/api/?results=50&nat=au&seed=abc').then(res => {
-        return this.setState({employees:res.data.results})});
-       this.timer = setInterval(this.updateState, 4000);
-     
+        axios.get('https://randomuser.me/api/?results=50&nat=au&seed=abc').then(res => {
+          return this.setState({employees:res.data.results})});
+          this.startTime()
+    }
+    startTime = () => {
+      this.timer = setInterval(() => {
+        this.setState({screen: 'employee'})
+       }, 4000);
     }
     componentWillUnmount(){
       clearInterval(this.timer)
     }
   
-
-  updateState(){
-    this.setState({screen: 'employee'});
-
-  }
-
-
-
-
-    removeEmployee(employeeRemoved){
-
+    removeEmployee = (employeeRemoved) => {
       this.setState((state) => ({
         employees: state.employees.filter(employee => employee !== employeeRemoved)
           }))
         
      }
-
-     AddBookMark(bookMarkAdded){
+     AddBookMark = (bookMarkAdded) => {
         this.setState(state => ({
           bookmarks: state.bookmarks.concat(bookMarkAdded)
              
@@ -77,27 +54,16 @@ class Main extends Component{
 
       this.setState(state => ({
         employees: state.employees.concat(postSubmitted)
-      
       })
       )
-
     }
-
-    navigate(){
+    navigate = () => {
       this.setState({remove:'remove'})
     }
-
-    navigateBack(){
+    navigateBack = () => {
       this.setState({remove:'default'});
-   
     }
 
-
-
-    // componentDidMount(){
-    //   const data = StimulareFetchFromDataBase();
-    //   this.setState({posts: data});
-    // }
     render(){
       
       return(

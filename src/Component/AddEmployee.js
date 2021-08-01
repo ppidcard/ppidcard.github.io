@@ -14,7 +14,7 @@ class AddEmployee extends Component{
         const lastName = evt.target.elements.lastName.value
         const country = evt.target.elements.country.value
         const city = evt.target.elements.city.value
-        const gender = evt.target.elements.gender.value
+        const gender = 'female'
         const employee = {
             'id':{
                 'value':Number(new Date())
