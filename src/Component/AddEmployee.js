@@ -6,16 +6,27 @@ import {Link} from 'react-router-dom'
 class AddEmployee extends Component{
     constructor(props){
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.state = {
+            gender:''
+        }
     }
-    handleSubmit(evt){
+    prinot(evt){
+        console.log(evt.target)
+    }
+    handleChange = (evt) => {
+        this.setState({gender: evt.target.value});
+    }
+  
+    handleSubmit = (evt) => {
         evt.preventDefault();
         const link = evt.target.elements.link.value
         const firstName = evt.target.elements.firstName.value
         const lastName = evt.target.elements.lastName.value
         const country = evt.target.elements.country.value
         const city = evt.target.elements.city.value
-        const gender = 'female'
+        const email = evt.target.elements.email.value
+        const phone = evt.target.elements.phone.value
+        const gender = this.state.gender
         const employee = {
             'id':{
                 'value':Number(new Date())
@@ -32,7 +43,9 @@ class AddEmployee extends Component{
                 'large':link,
                 'medium':link
             },
-            'gender':gender
+            'gender':gender,
+            'email': email,
+            'phone':phone
         }
         if(firstName && lastName ){
             this.props.onAddEmployee(employee)
@@ -42,14 +55,14 @@ class AddEmployee extends Component{
         return(
             <div className='add-employee'>
             <div className='form'>
-                <Form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit} >
                     <input type='text' placeholder='First Name'name='firstName'/>
                     <input type='text' placeholder='Last Name'name='lastName'/>
                     <label for="gender" id='gender' className='gender-label'>   Gender</label>
-                    <select className='select-gender' form='gender'>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
+                    <select className='select-gender' form='gender' name='gender' onChange={this.handleChange}>
+                    <option value="male" name='gender'>Male</option>
+                    <option value="female" name='gender'>Female</option>
+                    <option value="other" name='gender'>Other</option>
                     </select>
                 
                     <input type='text' placeholder='Email Address'name='email'/>
