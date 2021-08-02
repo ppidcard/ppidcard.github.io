@@ -9,7 +9,6 @@ function EmployeeDirect(props){
 
     return(
             <div className="photo-grid">
-          
             {props.employee.map((employee, index) => <EmployeeCard key={index} employee={employee} onRemoveEmployee={props.onRemoveEmployee} removeState={props.removeState}/>)}
             </div>
     )

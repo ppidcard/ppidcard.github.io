@@ -48,6 +48,7 @@ class Main extends Component{
      }
 
      AddEmployee(postSubmitted){
+
       this.setState(state => ({
         employees: state.employees.concat(postSubmitted)
       })

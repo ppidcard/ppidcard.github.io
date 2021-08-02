@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Form, Col, FormGroup, Checkbox } from 'react-bootstrap'
 import '../Styles/AddEmployee.css'
+import {Link} from 'react-router-dom'
 
 class AddEmployee extends Component{
     constructor(props){
@@ -39,35 +40,28 @@ class AddEmployee extends Component{
     }
     render(){
         return(
-            <div>
-
+            <div className='add-employee'>
             <div className='form'>
                 <Form onSubmit={this.handleSubmit}>
-                    <Form.Row>
-                    <Col>
-                    <Form.Control type='text' placeholder='First Name'name='firstName'/>
-                    </Col>
-                    <Col>
-                    <Form.Control type='text' placeholder='Last Name'name='lastName'/>
-                    </Col>
-                    </Form.Row>
+                    <input type='text' placeholder='First Name'name='firstName'/>
+                    <input type='text' placeholder='Last Name'name='lastName'/>
                     <label for="gender" id='gender' className='gender-label'>   Gender</label>
                     <select className='select-gender' form='gender'>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                     </select>
-     
-                    
-
-           
+                
                     <input type='text' placeholder='Email Address'name='email'/>
                     <input type='text' placeholder='Phone'name='phone'/>
                                         <input type='text' placeholder='City'name='city'/>
                     <input type='text' placeholder='Country'name='country'/>
 
                     <input type='text' className='profile-picture' placeholder='Profile Picture' name='link'/>
-                    <button className='form-button'>Add</button>
+                    <div>
+                        <button className='add-button'>Add</button>
+                        <Link to='/'><button className='add-button'>Discard</button></Link>
+                    </div>
                 </Form>
             </div>
             </div>

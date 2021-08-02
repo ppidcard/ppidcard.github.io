@@ -4,14 +4,15 @@
     border: none;
     background-color:  #f2f2f2;
     font-size: 15px;
-
     padding-left: 20px;
     margin-bottom: 20px;
 }
-
+.add-employee{
+    padding-top: 200px;
+}
 .gender-label{
 
-    padding-right: 149px;
+    padding-right: 100px;
     font-weight: 500;
     background-color:transparent ;
     padding-top: 13px;
@@ -29,6 +30,26 @@
 }
 
 form input.profile-picture{
-    width: 410px;
+    width: 350px;
     
 }
+
+.add-button{
+    width: 150px;
+    height: 40px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background: #065784;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 15px;
+
+}
+
+.add-button:hover{
+    background: darkcyan;
+    color: white;
+}
+
